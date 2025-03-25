@@ -1,0 +1,82 @@
+/* === Плавное появление элементов === */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Кнопка "Назад" с эффектами === */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    background: #ff66a3;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+    background: #ff3385;
+    transform: scale(1.1);
+}
+
+/* === Эффект появления при скролле === */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Глитч-эффект заголовка === */
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff; }
+    25% { text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffff; }
+    50% { text-shadow: 2px -2px 0px #ff00ff, -2px 2px 0px #00ffff; }
+    75% { text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00ffff; }
+    100% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff; }
+}
+
+.glitch {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    animation: glitch 0.2s infinite alternate;
+}
+
+/* === Эффект печатания текста === */
+.typing-effect {
+    display: inline-block;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: typing 3s steps(30, end), blink-caret 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
